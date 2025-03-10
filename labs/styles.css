@@ -1,0 +1,204 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    background-color: #ffe6f2;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    line-height: 2;
+}
+
+#main-title {
+    font-size: 60px;
+    color: hotpink;
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #d63384;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+a {
+    color: #cc32bf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff1493;
+    text-decoration: none;
+}
+
+#paragraph-about-us {
+    color: #ff0077 !important;
+    background-color: #ffdae5;
+    padding: 20px;
+}
+
+#link-salons {
+    font-size: 22px;
+    line-height: 3;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #feafe5;
+    padding-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #cf286e;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #ffa0d4;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #d63384;
+    border-radius: 10px;
+    height: 500px;
+    width: 700px;
+}
+
+table.services-table {
+    margin: auto;
+    border-spacing: 10px;
+    color: rgb(69, 3, 3);
+    border: 5px solid rgb(255, 141, 179);
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+table.services-table th {
+    padding: 10px;
+    background-color: #feafc3;
+}
+
+table.services-table th, table.services-table td {
+    padding: 7px;
+    text-align: center;
+    border: 5px solid rgb(255, 141, 179);
+}
+
+table.services-table td {
+    background-color: #ffcddc;
+}
+
+dt {
+    font-weight: bold; 
+    color: #e81abb; 
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px; 
+    margin-bottom: 20px; 
+    font-style: italic; 
+}
+
+table.price-table {
+    margin: auto;
+    border-spacing: 0;
+    border: 5px solid rgb(255, 165, 222);
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.price-table th {
+    background-color: rgb(255, 206, 224);
+    border: 5px solid rgb(255, 165, 222);
+    padding: 10px;
+}
+
+.price-table td {
+    text-align: center;
+    border: 5px solid rgb(255, 165, 222);
+    padding: 10px;
+}
+
+.price {
+    background-color: #fcd4ff;
+}
+
+.check-list, .ordered-list {
+    list-style-position: inside;
+    text-align: center;
+    margin: 5px auto;
+    padding: 10px;
+    width: 90%;
+    background-color: #d5f4ff;
+    
+}
+
+.check-list li, .ordered-list li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.check-list li {
+    list-style-type: '🍓';
+    color: #ff0077;
+}
+
+.ordered-list li {
+    list-style-type: lower-alpha;
+    color: #ff00b7;
+}
+
+.info-section p {
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #d5f4ff;
+}
+
+.info-section p > strong {
+    color: rgb(132, 0, 255);
+}
+
+strong + i {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 26px;
+    color: rgb(0, 119, 255);
+}
