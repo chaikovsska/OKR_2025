@@ -202,3 +202,13 @@ strong + i {
     font-size: 26px;
     color: rgb(0, 119, 255);
 }
+
+.sale-section p > a {
+    font-size: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+b + i {
+    font-size: 25px;
+    color: #ff0077;
+}
