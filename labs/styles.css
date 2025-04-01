@@ -157,6 +157,12 @@ table.price-table {
     padding: 10px;
 }
 
+.info-section p {
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #d5f4ff;
+}
+
 .price {
     background-color: #fcd4ff;
 }
@@ -187,28 +193,115 @@ table.price-table {
     color: #ff00b7;
 }
 
-.info-section p {
-    font-size: 22px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #d5f4ff;
+.reviews-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center; 
+}
+.review {
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
 }
 
-.info-section p > strong {
-    color: rgb(132, 0, 255);
+.review:first-child {
+    border: 2px solid #ff69b4;
+    background-color: #fff0f5;
+}
+.review img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    float: right;
+}
+p span {
+    font-weight: bold;
+    color: #ff69b4;
 }
 
-strong + i {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 26px;
-    color: rgb(0, 119, 255);
+.review p {
+    text-align: left;
 }
 
-.sale-section p > a {
+.back-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ff69b4;
+    color: white;
+    padding: 10px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.back-button:hover {
+    background-color: #fff200;
+}
+
+#visit-us {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 20px;
+    position: relative;
+    color: #b700ff;
+}
+
+#visit-us:before {
+    content: "\2605";
+    color: #06f7ff;
     font-size: 30px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-b + i {
-    font-size: 25px;
-    color: #ff0077;
+#visit-us:after {
+    content: "\2605";
+    color: #06f7ff;
+    font-size: 30px;
+}
+
+.salons-partners a:link {
+    color: #007BFF;
+    text-decoration: none; 
+}
+
+.salons-partners a:visited {
+    color: #800080;
+    text-decoration: none;
+}
+
+.salons-partners a:active {
+    background-color: #0dff00; 
+}
+
+.salons-partners a:hover {
+    color: #fbff00; 
+    text-decoration: underline; 
+}
+
+.cta-container{
+    margin-top: 50px;
+    margin-left: 5px;
+}
+  
+div.feedback-container {
+    position: relative;
+    width: 400px;
+    height: 115px;
+    border: 3px solid #7721ad;
+    border-radius: 10px;
+}
+  
+div.cta-message {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    width: 300px;
+    height: 60px;
+    background-color: rgb(154, 167, 255);
+    color: white;
+    border: 3px solid #8a47ff;
+    border-radius: 10px;
 }
