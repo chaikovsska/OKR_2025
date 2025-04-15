@@ -11,9 +11,23 @@
     body {
         margin-left: 220px;
     }
+    button {             
+        background-color: #f48fb1;  
+        color: white;                
+        font-size: 18px;            
+        padding: 10px 20px;          
+        margin: 10px 0;             
+        border: none;             
+        border-radius: 8px;        
+        cursor: pointer;             
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #ec407a;   
+    }
 
 </style>
-
 <body>
     <h1 id="main-title">Салон краси "Well beauty"</h1>
     <p>Ласкаво просимо до <b>"Well beauty"</b> – простору краси та гармонії! <br>
@@ -22,6 +36,8 @@
         <br>
         Запрошуємо вас до "Well beauty" – місця, де ваша краса сяє ще яскравіше!
         <br>Завітайте та подаруйте собі час для себе! 💖
+        <button onclick="makeAppointment()">Записатись до салону</button>
+        <button onclick="compareStrings()">Порівняння</button>
         <br> <a href="#Salons" id="link-salons">Наші салони-партнери</a>
     </p>
     <a href="salonView.jpg" target="_blank">
@@ -35,10 +51,31 @@
         </ul>
     </nav>
     <div class="sale-section">
-        <h2 class="section-title">Акційна пропозиція березня</h2>
+        <h2 class="section-title">Акційна <strong>пропозиція</strong> березня</h2>
         <p>Фарбування волосся в рожевий колір зі знижкою 50%! Дізнайся більше <a href="services.html#sale">тут</a>!</p>
     </div>
     <h2 id="Salons" class="section-title">Наші салони-партнери</h2>
     <iframe src="https://leblanc.ua/en/" height="500" width="700" title="Salons"></iframe>
+
+    <script>
+    //     window.onload = function () {
+    //     alert("Вітаємо вас на сайті салону краси 'Well beauty'!");
+    //     setTimeout(function () {
+    //         let userName = prompt("Як вас звати?");
+    //         if (userName === null || userName.trim() === "") {
+    //             alert("Шкода, що ви не представились. До зустрічі!");
+    //             return;
+    //         }
+    //         alert("Ласкаво просимо на наш сайт, " + userName + "!");
+    //         let proceed = confirm("Бажаєте підібрати ідеальну процедуру саме для вас?");
+    //         if (proceed) {
+    //             makeAppointment();
+    //         } else {
+    //             alert("Гаразд, перегляньте наші послуги та оберіть, що вам до душі 😊");
+    //         }
+    //     }, 100);
+    // }; 
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
