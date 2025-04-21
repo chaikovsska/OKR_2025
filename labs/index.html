@@ -27,6 +27,32 @@
         background-color: #ec407a;   
     }
 
+    #services-list li {
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    }
+
+    .highlight {
+    background-color: #ffd6ec;
+    font-weight: bold;
+    }
+
+    .colored {
+    background-color: rgb(145, 205, 255);
+    color: black;
+    transition: background-color 0.5s;
+    }
+
+    .button-block {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    gap: 5px;
+    margin-top: 50px; 
+    }
+
 </style>
 <body>
     <h1 id="main-title">Салон краси "Well beauty"</h1>
@@ -36,8 +62,14 @@
         <br>
         Запрошуємо вас до "Well beauty" – місця, де ваша краса сяє ще яскравіше!
         <br>Завітайте та подаруйте собі час для себе! 💖
-        <button onclick="makeAppointment()">Записатись до салону</button>
-        <button onclick="compareStrings()">Порівняння</button>
+
+        <div class="button-block">
+            <button onclick="makeAppointment()">Записатись до салону</button>
+            <button id="promoBtn">Дізнайся акційні пропозиції</button>
+            <button id="multiHandlerBtn">Отримати бонус 🌸</button>
+            <button id="objBtn">Секретна послуга</button>
+        </div>
+
         <br> <a href="#Salons" id="link-salons">Наші салони-партнери</a>
     </p>
     <a href="salonView.jpg" target="_blank">
@@ -48,8 +80,44 @@
             <li><a href="services.html">Послуги</a></li>
             <li><a href="aboutUs.html">Про наш салон</a></li>
             <li><a href="reviews.html">Відгуки клієнтів</a></li>
-        </ul>
+        <div id="top-menu">
+            <button data-action="save">Зберегти</button>
+            <button data-action="load">Завантажити</button>
+            <button data-action="delete">Видалити</button>
+        </div>
     </nav>
+
+    <h2>✨ Наші послуги</h2>
+    <ul id="services-list">
+        <li>Манікюр</li>
+        <li>Фарбування волосся</li>
+        <li>Масаж</li>
+        <li>Брови та вії</li>
+      </ul>
+
+    <!-- Кнопка з поведінкою toggler -->
+    <button data-behavior="toggle" data-target="#faq-section">
+        ❓ Популярні питання
+    </button>
+    
+    <!-- Прихований блок з питаннями -->
+    <div id="faq-section" style="display: none; margin-top: 10px; background: #fff3f8; padding: 10px; border-radius: 8px;">
+        <ul>
+        <li>
+            <strong>Яка тривалість процедури фарбування?</strong><br>
+            Залежно від обраної техніки — від 1 до 3 годин. Наш майстер підкаже точніше після консультації.
+        </li>
+        <li>
+            <strong>Чи можна записатись онлайн?</strong><br>
+            Так, ви можете записатись через наш сайт або Instagram. Також є можливість швидкої консультації в чаті.
+        </li>
+        <li>
+            <strong>Які бренди косметики ви використовуєте?</strong><br>
+            Ми працюємо з професійними брендами: L'Oréal Professionnel, Estel, OPI, Christina, Holy Land.
+        </li>
+        </ul>
+    </div>
+
     <div class="sale-section">
         <h2 class="section-title">Акційна <strong>пропозиція</strong> березня</h2>
         <p>Фарбування волосся в рожевий колір зі знижкою 50%! Дізнайся більше <a href="services.html#sale">тут</a>!</p>
@@ -58,23 +126,97 @@
     <iframe src="https://leblanc.ua/en/" height="500" width="700" title="Salons"></iframe>
 
     <script>
-    //     window.onload = function () {
-    //     alert("Вітаємо вас на сайті салону краси 'Well beauty'!");
-    //     setTimeout(function () {
-    //         let userName = prompt("Як вас звати?");
-    //         if (userName === null || userName.trim() === "") {
-    //             alert("Шкода, що ви не представились. До зустрічі!");
-    //             return;
-    //         }
-    //         alert("Ласкаво просимо на наш сайт, " + userName + "!");
-    //         let proceed = confirm("Бажаєте підібрати ідеальну процедуру саме для вас?");
-    //         if (proceed) {
-    //             makeAppointment();
-    //         } else {
-    //             alert("Гаразд, перегляньте наші послуги та оберіть, що вам до душі 😊");
-    //         }
-    //     }, 100);
-    // }; 
+        // 2. Через властивість
+        let promoBtn = document.getElementById('promoBtn');
+        promoBtn.onclick = function () {
+        alert("Сьогоднішні акції:\n🌺 -15% на фарбування\n💇 Безкоштовна стрижка при записі на комплексний догляд");
+        };
+
+        // 3.
+        let bonusBtn = document.getElementById('multiHandlerBtn');
+        function showDiscount() {
+            alert("Вітаємо! Ви отримали знижку -10% на будь-яку послугу!");
+        }
+
+        function changeColor() {
+            bonusBtn.classList.add('colored');
+            setTimeout(() => {
+            bonusBtn.classList.remove('colored');
+            }, 2000);
+        }
+
+        bonusBtn.addEventListener("click", showDiscount);
+        bonusBtn.addEventListener("click", changeColor);
+
+        
+        // 4.
+        let objBtn = document.getElementById("objBtn");
+        let secretHandler = {
+        handleEvent(event) {
+            alert(
+            `Секретна послуга: Еліксир молодості – розкішна процедура з використанням золота.
+            \nНатиснута кнопка: ` + event.currentTarget);
+        }
+        };
+
+        objBtn.addEventListener("click", secretHandler);
+
+        // Видалення обробника через 30 секунд
+        setTimeout(() => {
+        objBtn.removeEventListener("click", secretHandler);
+        }, 30000);
+    
+        
+        // 5.
+        let servicesList = document.getElementById("services-list");
+
+        servicesList.onclick = function(event) {
+        let target = event.target;
+
+        if (target.tagName === "LI") {
+            let allItems = servicesList.querySelectorAll("li");
+            allItems.forEach(item => item.classList.remove("highlight"));
+
+            target.classList.add("highlight");
+        }
+        };
+
+        // 6.
+        let topMenu = document.getElementById("top-menu");
+
+        topMenu.addEventListener("click", function(event) {
+        let button = event.target.closest("button");
+        if (!button) return;
+
+        let action = button.dataset.action;
+
+        switch (action) {
+            case "save":
+            alert("Дані клієнта збережено!");
+            break;
+            case "load":
+            alert("Завантажено останні дані клієнта.");
+            break;
+            case "delete":
+            alert("Видалено запис клієнта.");
+            break;
+            default:
+            alert("Невідома дія.");
+        }
+        });
+
+        // 7. Поведінка: Toggler
+        document.addEventListener("click", function(event) {
+        let btn = event.target.closest("[data-behavior='toggle']");
+        if (!btn) return;
+
+        let targetSelector = btn.dataset.target;
+        let targetElement = document.querySelector(targetSelector);
+        if (!targetElement) return;
+
+        let isVisible = targetElement.style.display !== "none";
+        targetElement.style.display = isVisible ? "none" : "block";
+        });
     </script>
     <script src="script.js"></script>
 </body>
