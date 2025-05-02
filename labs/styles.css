@@ -58,7 +58,7 @@ nav {
     height: 100%;
     width: 200px;
     background-color: #feafe5;
-    padding-top: 70px; /* щоб не заходило під хедер */
+    padding-top: 70px; 
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
@@ -80,19 +80,6 @@ nav ul li a {
     font-weight: bold;
     text-align: left;
     border-radius: 5px;
-}
-
-nav button {
-    display: block;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    text-align: left;
-    border-radius: 8px;
-    cursor: pointer; 
-    transition: background-color 0.3s;  
-    margin: 10px;         
 }
 
 nav ul li a:hover {
@@ -220,10 +207,6 @@ table.price-table {
     border-radius: 10px;
 }
 
-.review:first-child {
-    border: 2px solid #ff69b4;
-    background-color: #fff0f5;
-}
 .review img {
     width: 100px;
     height: 100px;
@@ -296,10 +279,6 @@ p span {
     text-decoration: underline; 
 }
 
-.cta-container{
-    margin-top: 50px;
-    margin-left: 5px;
-}
   
 div.feedback-container {
     position: relative;
@@ -309,14 +288,3 @@ div.feedback-container {
     border-radius: 10px;
 }
   
-div.cta-message {
-    position: absolute;
-    top: 40px;
-    right: 50px;
-    width: 300px;
-    height: 60px;
-    background-color: rgb(154, 167, 255);
-    color: white;
-    border: 3px solid #8a47ff;
-    border-radius: 10px;
-}

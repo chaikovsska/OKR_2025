@@ -27,23 +27,6 @@
         background-color: #ec407a;   
     }
 
-    #services-list li {
-    cursor: pointer;
-    padding: 5px;
-    transition: background-color 0.3s ease;
-    }
-
-    .highlight {
-    background-color: #ffd6ec;
-    font-weight: bold;
-    }
-
-    .colored {
-    background-color: rgb(145, 205, 255);
-    color: black;
-    transition: background-color 0.5s;
-    }
-
     .button-block {
     display: flex;
     flex-direction: column; 
@@ -53,6 +36,77 @@
     margin-top: 50px; 
     }
 
+    #products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0;
+    }
+
+    .product {
+    position: relative;
+    width: 150px;
+    text-align: center;
+    }
+
+    .product img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    transition: transform 0.3s, border 0.3s;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    }
+
+    .description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cf286e;
+    }
+
+
+    .bonus {
+    width: 140px;
+    padding: 12px;
+    margin: 10px auto;
+    background: linear-gradient(to right, #f8bbd0, #b2ebf2);
+    border: 2px solid #90caf9;
+    border-radius: 12px;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .bonus:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropzone {
+    width: 320px;
+    min-height: 180px;
+    padding: 20px;
+    margin: 30px auto 0;
+    border: 2px dashed #90caf9;
+    border-radius: 15px;
+    background: #f3e5f5;
+    text-align: center;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: auto;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+    }
+
+    .highlight {
+    background-color: #e1f5fe;
+    }
 </style>
 <body>
     <h1 id="main-title">Салон краси "Well beauty"</h1>
@@ -65,9 +119,6 @@
 
         <div class="button-block">
             <button onclick="makeAppointment()">Записатись до салону</button>
-            <button id="promoBtn">Дізнайся акційні пропозиції</button>
-            <button id="multiHandlerBtn">Отримати бонус 🌸</button>
-            <button id="objBtn">Секретна послуга</button>
         </div>
 
         <br> <a href="#Salons" id="link-salons">Наші салони-партнери</a>
@@ -80,43 +131,46 @@
             <li><a href="services.html">Послуги</a></li>
             <li><a href="aboutUs.html">Про наш салон</a></li>
             <li><a href="reviews.html">Відгуки клієнтів</a></li>
-        <div id="top-menu">
-            <button data-action="save">Зберегти</button>
-            <button data-action="load">Завантажити</button>
-            <button data-action="delete">Видалити</button>
-        </div>
     </nav>
 
-    <h2>✨ Наші послуги</h2>
-    <ul id="services-list">
-        <li>Манікюр</li>
-        <li>Фарбування волосся</li>
-        <li>Масаж</li>
-        <li>Брови та вії</li>
-      </ul>
+    <h2 class="section-title">Косметичні продукти, які ми радимо:</h2>
+    <div id="products">
+        <div class="product">
+          <img src="cream.jpg" alt="Крем для обличчя">
+          <p class="description">Живильний крем для обличчя</p>
+        </div>
+        <div class="product">
+          <img src="lipstick.jpg" alt="Помада">
+          <p class="description">Стійка помада нюдового кольору</p>
+        </div>
+        <div class="product">
+            <img src="hair_mask.jpg" alt="Маска">
+            <p class="description">Зволожуюча маска для волосся</p>
+          </div>
+          <div class="product">
+            <img src="shampoo.jpg" alt="Шампунь">
+            <p class="description">Органічний шампунь для об'єму</p>
+          </div>
+          <div class="product">
+            <img src="nailpolish.jpg" alt="Лак для нігтів">
+            <p class="description">Лак для нігтів рожевого кольору</p>
+          </div>
+      </div>
 
-    <!-- Кнопка з поведінкою toggler -->
-    <button data-behavior="toggle" data-target="#faq-section">
-        ❓ Популярні питання
-    </button>
-    
-    <!-- Прихований блок з питаннями -->
-    <div id="faq-section" style="display: none; margin-top: 10px; background: #fff3f8; padding: 10px; border-radius: 8px;">
-        <ul>
-        <li>
-            <strong>Яка тривалість процедури фарбування?</strong><br>
-            Залежно від обраної техніки — від 1 до 3 годин. Наш майстер підкаже точніше після консультації.
-        </li>
-        <li>
-            <strong>Чи можна записатись онлайн?</strong><br>
-            Так, ви можете записатись через наш сайт або Instagram. Також є можливість швидкої консультації в чаті.
-        </li>
-        <li>
-            <strong>Які бренди косметики ви використовуєте?</strong><br>
-            Ми працюємо з професійними брендами: L'Oréal Professionnel, Estel, OPI, Christina, Holy Land.
-        </li>
-        </ul>
-    </div>
+
+
+      <div style="display: flex; justify-content: space-around; margin: 50px 0;">
+        <div class="container" id="left">
+          <h3>ОБЕРИ СВІЙ БОНУС</h3>
+          <div class="bonus" data-description="10% знижка на манікюр">БОНУС 1</div>
+          <div class="bonus" data-description="Подарунок: маска для обличчя">БОНУС 2</div>
+          <div class="bonus" data-description="Знижка 15% на фарбування волосся">БОНУС 3</div>
+        </div>
+      
+        <div class="container">
+          <div class="dropzone" id="target">Перетягни бонус сюди та отримай свою винагороду</div>
+        </div>
+      </div>
 
     <div class="sale-section">
         <h2 class="section-title">Акційна <strong>пропозиція</strong> березня</h2>
@@ -126,97 +180,129 @@
     <iframe src="https://leblanc.ua/en/" height="500" width="700" title="Salons"></iframe>
 
     <script>
-        // 2. Через властивість
-        let promoBtn = document.getElementById('promoBtn');
-        promoBtn.onclick = function () {
-        alert("Сьогоднішні акції:\n🌺 -15% на фарбування\n💇 Безкоштовна стрижка при записі на комплексний догляд");
-        };
-
-        // 3.
-        let bonusBtn = document.getElementById('multiHandlerBtn');
-        function showDiscount() {
-            alert("Вітаємо! Ви отримали знижку -10% на будь-яку послугу!");
-        }
-
-        function changeColor() {
-            bonusBtn.classList.add('colored');
-            setTimeout(() => {
-            bonusBtn.classList.remove('colored');
-            }, 2000);
-        }
-
-        bonusBtn.addEventListener("click", showDiscount);
-        bonusBtn.addEventListener("click", changeColor);
-
-        
-        // 4.
-        let objBtn = document.getElementById("objBtn");
-        let secretHandler = {
-        handleEvent(event) {
-            alert(
-            `Секретна послуга: Еліксир молодості – розкішна процедура з використанням золота.
-            \nНатиснута кнопка: ` + event.currentTarget);
-        }
-        };
-
-        objBtn.addEventListener("click", secretHandler);
-
-        // Видалення обробника через 30 секунд
-        setTimeout(() => {
-        objBtn.removeEventListener("click", secretHandler);
-        }, 30000);
-    
-        
-        // 5.
-        let servicesList = document.getElementById("services-list");
-
-        servicesList.onclick = function(event) {
+        products.addEventListener('mouseover', function(event) {
         let target = event.target;
+        console.log('mouseover → target:', target);
+        console.log('mouseover → relatedTarget:', event.relatedTarget);
 
-        if (target.tagName === "LI") {
-            let allItems = servicesList.querySelectorAll("li");
-            allItems.forEach(item => item.classList.remove("highlight"));
-
-            target.classList.add("highlight");
+        if (target.tagName === 'IMG' && !target.contains(event.relatedTarget)) {
+            let container = target.closest('.product');
+            let description = container.querySelector('.description');
+            description.style.display = 'block';
+            target.style.border = '2px solid #cf286e';
+            target.style.transform = 'scale(1.05)';
         }
+        });
+
+        products.addEventListener('mouseout', function(event) {
+        let target = event.target;
+        console.log('mouseout → target:', target);
+        console.log('mouseout → relatedTarget:', event.relatedTarget);
+
+        if (target.tagName === 'IMG' && !target.contains(event.relatedTarget)) {
+            let container = target.closest('.product');
+            let description = container.querySelector('.description');
+            description.style.display = 'none';
+            target.style.border = '2px solid transparent';
+            target.style.transform = 'scale(1)';
+        }
+        });
+
+
+        let currentDroppable = null;
+        let isDragging = false;
+        let bonusTaken = false;
+
+        document.querySelectorAll('.bonus').forEach(bonus => {
+        bonus.onmousedown = function (event) {
+            if (bonusTaken) {
+            alert("Обирати можна лише один раз!");
+            return;
+            }
+
+            if (isDragging) return;
+            isDragging = true;
+
+            let shiftX = event.clientX - bonus.getBoundingClientRect().left;
+            let shiftY = event.clientY - bonus.getBoundingClientRect().top;
+            let isMoved = false;
+
+            let originalParent = bonus.parentElement;
+            let originalNextSibling = bonus.nextElementSibling;
+
+            function moveAt(pageX, pageY) {
+            bonus.style.left = pageX - shiftX + 'px';
+            bonus.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+            if (!isMoved) {
+                isMoved = true;
+                bonus.style.position = 'absolute';
+                bonus.style.zIndex = 1000;
+                document.body.append(bonus);
+            }
+
+            moveAt(event.pageX, event.pageY);
+
+            bonus.hidden = true;
+            let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+            bonus.hidden = false;
+
+            if (!elemBelow) return;
+
+            let droppableBelow = elemBelow.closest('.dropzone');
+
+            if (currentDroppable !== droppableBelow) {
+                if (currentDroppable) leaveDroppable(currentDroppable);
+                currentDroppable = droppableBelow;
+                if (currentDroppable) enterDroppable(currentDroppable);
+            }
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            bonus.onmouseup = function () {
+            document.removeEventListener('mousemove', onMouseMove);
+            bonus.onmouseup = null;
+            isDragging = false;
+
+            if (isMoved && currentDroppable) {
+                const bonusText = bonus.dataset.description;
+                currentDroppable.textContent = bonusText;
+                leaveDroppable(currentDroppable);
+                bonus.remove();
+                bonusTaken = true;
+            } else if (isMoved) {
+                bonus.style.position = '';
+                bonus.style.zIndex = '';
+                bonus.style.left = '';
+                bonus.style.top = '';
+
+                if (originalNextSibling) {
+                originalParent.insertBefore(bonus, originalNextSibling);
+                } else {
+                originalParent.appendChild(bonus);
+                }
+
+                if (currentDroppable) {
+                leaveDroppable(currentDroppable);
+                currentDroppable = null;
+                }
+            }
+            };
         };
 
-        // 6.
-        let topMenu = document.getElementById("top-menu");
+        bonus.ondragstart = () => false;
+        });
 
-        topMenu.addEventListener("click", function(event) {
-        let button = event.target.closest("button");
-        if (!button) return;
-
-        let action = button.dataset.action;
-
-        switch (action) {
-            case "save":
-            alert("Дані клієнта збережено!");
-            break;
-            case "load":
-            alert("Завантажено останні дані клієнта.");
-            break;
-            case "delete":
-            alert("Видалено запис клієнта.");
-            break;
-            default:
-            alert("Невідома дія.");
+        function enterDroppable(elem) {
+        elem.classList.add('highlight');
         }
-        });
 
-        // 7. Поведінка: Toggler
-        document.addEventListener("click", function(event) {
-        let btn = event.target.closest("[data-behavior='toggle']");
-        if (!btn) return;
-
-        let targetSelector = btn.dataset.target;
-        let targetElement = document.querySelector(targetSelector);
-        if (!targetElement) return;
-
-        let isVisible = targetElement.style.display !== "none";
-        targetElement.style.display = isVisible ? "none" : "block";
-        });
+        function leaveDroppable(elem) {
+        elem.classList.remove('highlight');
+        }
     </script>
     <script src="script.js"></script>
 </body>
